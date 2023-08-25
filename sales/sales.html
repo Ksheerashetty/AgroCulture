@@ -64,15 +64,18 @@
         }
         
         .active{
-            background: white;
-            color: #000000;
+            background:#736A20;
+            opacity: .6;
+            color: aliceblue;
+            font-weight: bold;
         }
 
         h1{
             margin: 50px auto;
             margin-bottom: 20px;
-            color: white;
-            text-shadow:  -8px -8px 15px rgba(255, 255, 255, 0.5),8px 8px 15px rgba(255, 255, 255, 0.5);
+            color:aliceblue;
+            text-shadow: -8px -8px 15px rgb(147, 127, 45), 8px 8px 15px rgb(147, 127, 45);
+
         }
 
         .button{
@@ -85,10 +88,10 @@
             box-shadow:  -8px -8px 10px rgba(0, 0, 0, 0.2),8px 8px 15px rgba(0, 0, 0, 0.2);
             cursor: pointer;
         }
-
-        /* ---------------------------------------------------------------------------------- */
-
-
+        .button:hover{
+            background-color:#937F2D ;
+            opacity: .6;
+        }
         .table-wrapper {
             overflow: auto;
             max-width: 100%;
@@ -121,7 +124,7 @@
 <body>
     <!-- top navigation bar -->
     <ul>
-        <li><a class="active" href="#">sales</a></li>
+        <li><a class="active" href="#">Sales</a></li>
         <li><a href="../crops/crop.html">Crops</a></li>
         <li><a href="../equipment/equipment.html">Equipment</a></li>
         <li><a href="#">Logout</a></li>
@@ -132,14 +135,14 @@
 
     <center>
         <h1 style="font-weight: normal;text-transform: none;">Sales</h1>
-        <button class="button" onclick="window.location.href='../sales/add_sales.html'">Add sales details</button>
+        <button class="button" onclick="window.location.href='../sales/add_sales.html'">Add Sales</button>
         <div class="table-wrapper" tabindex="0">
             <table>
                 <thead>
                     <tr>
                         <th>Sales Id</th>
                         <th>Crop</th>
-                        <th>day</th>
+                        <th>Day</th>
                         <th>Total Sales</th>
                     </tr>
                 </thead>

@@ -135,7 +135,7 @@
 
     <center>
         <h1 style="font-weight: normal;text-transform: none;">Sales</h1>
-        <button class="button" onclick="window.location.href='../sales/add_sales.html'">Add Sales</button>
+        <button class="button" onclick="window.location.href='../sales/add_sales.php'">Add Sales</button>
         <div class="table-wrapper" tabindex="0">
             <table>
                 <thead>

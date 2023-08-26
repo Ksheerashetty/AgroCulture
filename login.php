@@ -147,6 +147,16 @@
       <p>New User? <a href="register.php">Signup Here</a></p>
     </form>
   </div>
+  <center>
+  <?php 
+    session_start();
+    if(isset($_SESSION['message']) && !empty($_SESSION['message']))
+    {
+      echo "<h1>Invalid details</h1>";
+      $_SESSION['message']="";
+    }
+    ?>
+    </center>
 </body>
 
 </html>

@@ -79,12 +79,14 @@
     button:hover {
       background-color: #554914;
     }
-    p{
+
+    p {
       margin-top: 50px;
       color: aliceblue;
       font-size: 20px;
     }
-    a{
+
+    a {
       color: rgb(102, 164, 218);
     }
 
@@ -137,10 +139,10 @@
     <li><a href="#">Contact us</a></li>
   </ul>
   <div>
-    <form action="#" method="post" class="form">
+    <form action="log.php" method="post" class="form">
       <h1>Login</h1>
-      <input type="text" placeholder="Username" required>
-      <input type="password" placeholder="Password" required>
+      <input type="text" placeholder="Username" name="name" required>
+      <input type="password" placeholder="Password" name="pass" required>
       <button>Login</button>
       <p>New User? <a href="register.php">Signup Here</a></p>
     </form>

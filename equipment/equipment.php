@@ -141,7 +141,7 @@
         <li><a href="../sales/sales.php">Sales</a></li>
         <li><a href="../crops/crop.php">Crops</a></li>
         <li><a class="active" href="#">Equipment</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="../logout.php">Logout</a></li>
     </ul>
 
     <!-- ---------------------------------------------------------------------------------- -->

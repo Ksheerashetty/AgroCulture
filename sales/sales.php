@@ -117,6 +117,9 @@
         td {
             text-align: left;
             padding: 0.5em 4em;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #ffffff;
         }
     </style>
 </head>
@@ -148,18 +151,19 @@
                 </thead>
                 <tbody>
                 <?php
-            include 'db.php';
-            $q = "select * from product";
-            $result = mysqli_query($c, $q);
-            if (mysqli_query($c, $q)) {
+            include '../db.php';
+            $q = "select * from sales";
+            $result = mysqli_query($con, $q);
+            if (mysqli_query($con, $q)) {
                 while ($a = mysqli_fetch_assoc($result)) {
                     echo "
                     <tr>
-                    <td>" . $a['p_name'] . "</td>
-                    <td>" . $a['cat'] . "</td>
-                    <td>" . $a['working'] . "</td>
+                    <td>" . $a['sid'] . "</td>
+                    <td>" . $a['cname'] . "</td>
+                    <td>" . $a['day'] . "</td>
+                    <td>" . $a['total'] . "</td>
                     <td><form action=\"p_del.php\" method=\"post\">
-                        <input type=\"hidden\" name=\"del\" value=\"" . $a['p_name'] . "\">
+                        <input type=\"hidden\" name=\"del\" value=\"" . $a['sid'] . "\">
                     <button class=\"button\" type=\"submit\">Delete</button>
                 </form></td>
                 </tr>";

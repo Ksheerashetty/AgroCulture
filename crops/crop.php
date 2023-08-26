@@ -176,7 +176,7 @@ if (mysqli_query($con, $q)) {
         <td>" . $a['fid'] . "</td>
         <td>" . $a['quantity'] . "</td>
         <td>
-            <form action=\"p_del.php\" method=\"post\">
+            <form action=\"del_crop.php\" method=\"post\">
                 <input type=\"hidden\" name=\"del\" value=\"" . $a['cid'] . "\">
                 <div class=\"center-button\">
                     <button class=\"button\" type=\"submit\">Delete</button>
@@ -188,8 +188,6 @@ if (mysqli_query($con, $q)) {
 }
 ?>
 </tbody>
-
-
             </table>
         </div>
     </center>

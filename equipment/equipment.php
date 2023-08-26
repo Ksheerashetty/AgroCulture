@@ -178,7 +178,7 @@
                     <td>" . $a['cost'] . "</td>
                     <td>
                     <form action=\"del_equipment.php\" method=\"post\">
-                        <input type=\"hidden\" name=\"del\" value=\"" . $a['ename'] . "\">
+                        <input type=\"hidden\" name=\"del\" value=\"" . $a['eid'] . "\">
                         <div class=\"center-button\">
                         <button class=\"button\" type=\"submit\">Delete</button>
                     </div>

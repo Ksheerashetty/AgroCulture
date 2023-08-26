@@ -21,7 +21,7 @@ $array=mysqli_fetch_assoc($r);
 if($n==1)
 {
     $_SESSION['id']=$array['fid'];
-    header("Location:sales/sales.html");
+    header("Location:sales/sales.php");
     exit();
 }
 else

@@ -30,7 +30,7 @@ else
     $q2="INSERT INTO farmer(fname,password, phone, address) VALUES('$name','$pass','$no','$add')";
     if($r2=mysqli_query($con,$q2))
     {
-        header("Location:login.html");
+        header("Location:login.php");
         exit();
     }
 }

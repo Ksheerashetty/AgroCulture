@@ -10,7 +10,7 @@ $fid=$_POST['fid'];
 $q="insert  into equipment (ename,fid,date,cost)values('$eqip','$fid','$date','$cost')";
 
 if(mysqli_query($con,$q)){
-    header("Location:../equipment/equipment.html");
+    header("Location:../equipment/equipment.php");
     exit();
 }
 

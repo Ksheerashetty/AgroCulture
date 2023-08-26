@@ -112,13 +112,16 @@
             border-radius: 10px;
             background-color: rgba(0, 0, 0, 0.3);
             color: #ffffff;
-            white-space: nowrap;
+            /* white-space: nowrap; */
         }
 
         th,
         td {
-            text-align: left;
+            text-align: center;
             padding: 0.5em 4em;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #ffffff;
         }
     </style>
 </head>
@@ -148,20 +151,21 @@
                         <th>Total Crops</th>
                     </tr>
                 </thead>
-                <!-- <tbody>
+                <tbody>
                 <?php
-            include 'db.php';
-            $q = "select * from product";
-            $result = mysqli_query($c, $q);
-            if (mysqli_query($c, $q)) {
+            include '../db.php';
+            $q = "select * from crop";
+            $result = mysqli_query($con, $q);
+            if (mysqli_query($con, $q)) {
                 while ($a = mysqli_fetch_assoc($result)) {
                     echo "
                     <tr>
-                    <td>" . $a['p_name'] . "</td>
-                    <td>" . $a['cat'] . "</td>
-                    <td>" . $a['working'] . "</td>
+                    <td>" . $a['cid'] . "</td>
+                    <td>" . $a['cname'] . "</td>
+                    <td>" . $a['fid'] . "</td>
+                    <td>" . $a['quantity'] . "</td>
                     <td><form action=\"p_del.php\" method=\"post\">
-                        <input type=\"hidden\" name=\"del\" value=\"" . $a['p_name'] . "\">
+                        <input type=\"hidden\" name=\"del\" value=\"" . $a['cid'] . "\">
                     <button class=\"button\" type=\"submit\">Delete</button>
                 </form></td>
                 </tr>";
@@ -169,7 +173,7 @@
             }
             ?>
 
-            </tbody> -->
+            </tbody>
             </table>
         </div>
     </center>

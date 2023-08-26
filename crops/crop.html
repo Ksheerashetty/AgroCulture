@@ -64,15 +64,17 @@
         }
 
         .active {
-            background: white;
-            color: #000000;
+            background:#736A20;
+            opacity: .6;
+            color: aliceblue;
+            font-weight: bold;
         }
 
         h1 {
             margin: 50px auto;
             margin-bottom: 20px;
-            color: white;
-            text-shadow: -8px -8px 10px rgba(255, 255, 255, 0.5), 8px 8px 15px rgba(255, 255, 255, 0.5);
+            color: aliceblue;
+            text-shadow: -8px -8px 15px rgb(147, 127, 45), 8px 8px 15px rgb(147, 127, 45);
         }
 
         .button{
@@ -88,7 +90,10 @@
 
         /* ---------------------------------------------------------------------------------- */
 
-
+        .button:hover{
+            background-color:#937F2D ;
+            opacity: .6;
+        }
         .table-wrapper {
             overflow: auto;
             max-width: 100%;
@@ -121,7 +126,7 @@
 <body>
     <!-- top navigation bar -->
     <ul>
-        <li><a href="../sales/sales.html">sales</a></li>
+        <li><a href="../sales/sales.html">Sales</a></li>
         <li><a class="active" href="#">Crops</a></li>
         <li><a href="../equipment/equipment.html">Equipment</a></li>
         <li><a href="#">Logout</a></li>
@@ -132,15 +137,15 @@
 
     <center>
         <h1 style="font-weight: normal;text-transform: none;">Crops</h1>
-        <button class="button" onclick="window.location.href='add_crop.html'">Add crops details</button>
+        <button class="button" onclick="window.location.href='add_crop.html'">Add Crops</button>
         <div class="table-wrapper" tabindex="0">
             <table>
                 <thead>
                     <tr>
-                        <th>Sales Id</th>
+                        <th>Crop ID</th>
                         <th>Crop</th>
-                        <th>day</th>
-                        <th>Total Sales</th>
+                        <th>Farmer ID</th>
+                        <th>Total Crops</th>
                     </tr>
                 </thead>
                 <!-- <tbody>

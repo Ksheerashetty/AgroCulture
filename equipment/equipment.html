@@ -62,17 +62,18 @@
             height: 2px;
             transition: all 0.5s linear;
         }
-
         .active {
-            background: white;
-            color: #000000;
+            background:#736A20;
+            opacity: .6;
+            color: aliceblue;
+            font-weight: bold;
         }
 
         h1 {
             margin: 50px auto;
-            color: white;
-            text-shadow: -8px -8px 10px rgba(255, 255, 255, 0.5), 8px 8px 15px rgba(255, 255, 255, 0.5);
             margin-bottom: 20px;
+            color: aliceblue;
+            text-shadow: -8px -8px 15px rgb(147, 127, 45), 8px 8px 15px rgb(147, 127, 45);
         }
 
         .button{
@@ -86,6 +87,10 @@
             cursor: pointer;
         }
 
+        .button:hover{
+            background-color:#937F2D ;
+            opacity: .6;
+        }
         /* ---------------------------------------------------------------------------------- */
 
 
@@ -132,13 +137,14 @@
 
     <center>
         <h1 style="font-weight: normal;text-transform: none;">Equipments</h1>
-        <button class="button" onclick="window.location.href='#'">Add equipment details</button>
+        <button class="button" onclick="window.location.href='add_equipment.html'">Add Equipment</button>
         <div class="table-wrapper" tabindex="0">
             <table>
                 <thead>
                     <tr>
-                        <th>Equipment Id</th>
-                        <th>Equipment name</th>
+                        <th>Equipment ID</th>
+                        <th>Equipment</th>
+                        <th>Farmer ID</th>
                         <th>Date</th>
                         <th>Cost</th>
                     </tr>

@@ -143,7 +143,7 @@
         <button class="button" onclick="window.location.href='add_crop.html'">Add Crops</button>
         <div class="table-wrapper" tabindex="0">
             <table>
-                <thead>
+                <thead> 
                     <tr>
                         <th>Crop ID</th>
                         <th>Crop</th>

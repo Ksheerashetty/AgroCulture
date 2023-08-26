@@ -126,9 +126,9 @@
 <body>
     <!-- top navigation bar -->
     <ul>
-        <li><a href="../sales/sales.html">Sales</a></li>
+        <li><a href="../sales/sales.php">Sales</a></li>
         <li><a class="active" href="#">Crops</a></li>
-        <li><a href="../equipment/equipment.html">Equipment</a></li>
+        <li><a href="../equipment/equipment.php">Equipment</a></li>
         <li><a href="#">Logout</a></li>
     </ul>
 

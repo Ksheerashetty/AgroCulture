@@ -127,7 +127,7 @@
         <li><a class="active" href="#">Sales</a></li>
         <li><a href="../crops/crop.php">Crops</a></li>
         <li><a href="../equipment/equipment.php">Equipment</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="../logout.php">Logout</a></li>
     </ul>
 
     <!-- ---------------------------------------------------------------------------------- -->

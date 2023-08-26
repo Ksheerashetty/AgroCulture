@@ -94,6 +94,14 @@
         /* ---------------------------------------------------------------------------------- */
 
 
+        .center-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin:15px;
+     }
+
         .table-wrapper {
             overflow: auto;
             max-width: 100%;
@@ -112,13 +120,17 @@
             border-radius: 10px;
             background-color: rgba(0, 0, 0, 0.3);
             color: #ffffff;
-            white-space: nowrap;
+            padding : 20px;
+            /* white-space: nowrap; */
         }
 
-        th,
         td {
-            text-align: left;
+            text-align: center;
             padding: 0.5em 4em;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+            font-size:20px;
         }
     </style>
 </head>
@@ -147,34 +159,38 @@
                         <th>Farmer ID</th>
                         <th>Date</th>
                         <th>Cost</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
-                <!-- <tbody>
-                <?php
-            include 'db.php';
-            $q = "select * from product";
-            $result = mysqli_query($c, $q);
-            if (mysqli_query($c, $q)) {
+                <tbody>
+              <?php
+            include '../db.php';
+            $q = "select * from equipment";
+            $result = mysqli_query($con, $q);
+            if (mysqli_query($con, $q)) {
                 while ($a = mysqli_fetch_assoc($result)) {
                     echo "
                     <tr>
-                    <td>" . $a['p_name'] . "</td>
-                    <td>" . $a['cat'] . "</td>
-                    <td>" . $a['working'] . "</td>
-                    <td><form action=\"p_del.php\" method=\"post\">
-                        <input type=\"hidden\" name=\"del\" value=\"" . $a['p_name'] . "\">
-                    <button class=\"button\" type=\"submit\">Delete</button>
-                </form></td>
-                </tr>";
+                    <td>" . $a['eid'] . "</td>
+                    <td>" . $a['ename'] . "</td>
+                    <td>" . $a['fid'] . "</td>
+                    <td>" . $a['date'] . "</td>
+                    <td>" . $a['cost'] . "</td>
+                    <td>
+                    <form action=\"e_del.php\" method=\"post\">
+                        <input type=\"hidden\" name=\"del\" value=\"" . $a['ename'] . "\">
+                        <div class=\"center-button\">
+                        <button class=\"button\" type=\"submit\">Delete</button>
+                    </div>
+                </form>
+            </td>
+            </tr>";
                 }
             }
-            ?>
-
-            </tbody> -->
+            ?> 
+            </tbody> 
             </table>
         </div>
     </center>
-
 </body>
-
 </html>

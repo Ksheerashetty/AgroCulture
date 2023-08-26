@@ -5,7 +5,7 @@ include '../db.php';
 $eqip=$_POST['equipment'];
 $date=$_POST['date'];
 $cost=$_POST['cost'];
-$fid=$_POST['fid'];
+$fid=$_SESSION['id'];
 
 $q="insert  into equipment (ename,fid,date,cost)values('$eqip','$fid','$date','$cost')";
 

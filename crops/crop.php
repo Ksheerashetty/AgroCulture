@@ -86,6 +86,7 @@
             margin-bottom: 20px;
             box-shadow:  -8px -8px 10px rgba(0, 0, 0, 0.2),8px 8px 15px rgba(0, 0, 0, 0.2);
             cursor: pointer;
+            
         }
 
         /* ---------------------------------------------------------------------------------- */
@@ -94,6 +95,14 @@
             background-color:#937F2D ;
             opacity: .6;
         }
+    .center-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin:15px;
+     }
+
         .table-wrapper {
             overflow: auto;
             max-width: 100%;
@@ -112,16 +121,17 @@
             border-radius: 10px;
             background-color: rgba(0, 0, 0, 0.3);
             color: #ffffff;
+            padding : 20px;
             /* white-space: nowrap; */
         }
 
-        th,
         td {
             text-align: center;
             padding: 0.5em 4em;
             border-radius: 10px;
             background-color: rgba(0, 0, 0, 0.3);
             color: #ffffff;
+            font-size:20px;
         }
     </style>
 </head>
@@ -149,31 +159,37 @@
                         <th>Crop</th>
                         <th>Farmer ID</th>
                         <th>Total Crops</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
-                <?php
-            include '../db.php';
-            $q = "select * from crop";
-            $result = mysqli_query($con, $q);
-            if (mysqli_query($con, $q)) {
-                while ($a = mysqli_fetch_assoc($result)) {
-                    echo "
-                    <tr>
-                    <td>" . $a['cid'] . "</td>
-                    <td>" . $a['cname'] . "</td>
-                    <td>" . $a['fid'] . "</td>
-                    <td>" . $a['quantity'] . "</td>
-                    <td><form action=\"p_del.php\" method=\"post\">
-                        <input type=\"hidden\" name=\"del\" value=\"" . $a['cid'] . "\">
+<tbody>
+<?php
+include '../db.php';
+$q = "select * from crop";
+$result = mysqli_query($con, $q);
+if (mysqli_query($con, $q)) {
+    while ($a = mysqli_fetch_assoc($result)) {
+        echo "
+        <tr>
+        <td>" . $a['cid'] . "</td>
+        <td>" . $a['cname'] . "</td>
+        <td>" . $a['fid'] . "</td>
+        <td>" . $a['quantity'] . "</td>
+        <td>
+            <form action=\"p_del.php\" method=\"post\">
+                <input type=\"hidden\" name=\"del\" value=\"" . $a['cid'] . "\">
+                <div class=\"center-button\">
                     <button class=\"button\" type=\"submit\">Delete</button>
-                </form></td>
-                </tr>";
-                }
-            }
-            ?>
+                </div>
+            </form>
+        </td>
+        </tr>";
+    }
+}
+?>
+</tbody>
 
-            </tbody>
+
             </table>
         </div>
     </center>

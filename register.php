@@ -129,7 +129,16 @@
     <li><a href="#">Contact us</a></li>
   </ul>
   <div>
+    
     <form action="reg.php" method="post" class="form">
+    <?php 
+    session_start();
+    if(isset($_SESSION['message']) && !empty($_SESSION['message']))
+    {
+      echo "<h1>User Name Exist</h1>";
+      $_SESSION['message']="";
+    }
+    ?>
       <h1>Signup</h1>
       <input type="text" placeholder="Name" name="name">
       <input type="password" placeholder="Password" name="pass">

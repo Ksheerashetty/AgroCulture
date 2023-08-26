@@ -89,9 +89,20 @@
 <body>
 
   <div>
-    <form action="#" method="post" class="form">
+    <form action="add_salesScript.php" method="post" class="form">
       <h1>Add Sales</h1>
-      <input type="text" placeholder="Crop" name="crop" required>
+      <select name="crop">
+        <?php
+        include '../db.php';
+        $q = "select * from crop";
+        $result = mysqli_query($con, $q);
+        if (mysqli_query($con, $q)) {
+            while ($a = mysqli_fetch_assoc($result)) {
+                echo "<option value=\"".$a['cname']."\">".$a['cname']."</option>
+                <input type=\"hidden\" name=\"cid\" value=\"" . $a['cid'] . "\">";}
+            }
+  ?>
+</select>
       <input type="date" placeholder="Date" name="date" required>
       <input type="text" placeholder="Total Sales" name="total" required>
       <button>Add</button>

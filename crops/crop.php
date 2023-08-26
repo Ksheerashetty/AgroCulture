@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sales</title>
+    <title>Crops</title>
     <style>
         * {
             margin: 0;
@@ -62,20 +62,19 @@
             height: 2px;
             transition: all 0.5s linear;
         }
-        
-        .active{
+
+        .active {
             background:#736A20;
             opacity: .6;
             color: aliceblue;
             font-weight: bold;
         }
 
-        h1{
+        h1 {
             margin: 50px auto;
             margin-bottom: 20px;
-            color:aliceblue;
+            color: aliceblue;
             text-shadow: -8px -8px 15px rgb(147, 127, 45), 8px 8px 15px rgb(147, 127, 45);
-
         }
 
         .button{
@@ -88,6 +87,9 @@
             box-shadow:  -8px -8px 10px rgba(0, 0, 0, 0.2),8px 8px 15px rgba(0, 0, 0, 0.2);
             cursor: pointer;
         }
+
+        /* ---------------------------------------------------------------------------------- */
+
         .button:hover{
             background-color:#937F2D ;
             opacity: .6;
@@ -110,13 +112,16 @@
             border-radius: 10px;
             background-color: rgba(0, 0, 0, 0.3);
             color: #ffffff;
-            white-space: nowrap;
+            /* white-space: nowrap; */
         }
 
         th,
         td {
-            text-align: left;
+            text-align: center;
             padding: 0.5em 4em;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #ffffff;
         }
     </style>
 </head>
@@ -124,9 +129,9 @@
 <body>
     <!-- top navigation bar -->
     <ul>
-        <li><a class="active" href="#">Sales</a></li>
-        <li><a href="../crops/crop.html">Crops</a></li>
-        <li><a href="../equipment/equipment.html">Equipment</a></li>
+        <li><a href="../sales/sales.php">Sales</a></li>
+        <li><a class="active" href="#">Crops</a></li>
+        <li><a href="../equipment/equipment.php">Equipment</a></li>
         <li><a href="#">Logout</a></li>
     </ul>
 
@@ -134,32 +139,33 @@
     <!-- table -->
 
     <center>
-        <h1 style="font-weight: normal;text-transform: none;">Sales</h1>
-        <button class="button" onclick="window.location.href='../sales/add_sales.html'">Add Sales</button>
+        <h1 style="font-weight: normal;text-transform: none;">Crops</h1>
+        <button class="button" onclick="window.location.href='add_crop.html'">Add Crops</button>
         <div class="table-wrapper" tabindex="0">
             <table>
                 <thead>
                     <tr>
-                        <th>Sales ID</th>
+                        <th>Crop ID</th>
                         <th>Crop</th>
-                        <th>Date</th>
-                        <th>Total Sales</th>
+                        <th>Farmer ID</th>
+                        <th>Total Crops</th>
                     </tr>
                 </thead>
-                <!-- <tbody>
+                <tbody>
                 <?php
-            include 'db.php';
-            $q = "select * from product";
-            $result = mysqli_query($c, $q);
-            if (mysqli_query($c, $q)) {
+            include '../db.php';
+            $q = "select * from crop";
+            $result = mysqli_query($con, $q);
+            if (mysqli_query($con, $q)) {
                 while ($a = mysqli_fetch_assoc($result)) {
                     echo "
                     <tr>
-                    <td>" . $a['p_name'] . "</td>
-                    <td>" . $a['cat'] . "</td>
-                    <td>" . $a['working'] . "</td>
+                    <td>" . $a['cid'] . "</td>
+                    <td>" . $a['cname'] . "</td>
+                    <td>" . $a['fid'] . "</td>
+                    <td>" . $a['quantity'] . "</td>
                     <td><form action=\"p_del.php\" method=\"post\">
-                        <input type=\"hidden\" name=\"del\" value=\"" . $a['p_name'] . "\">
+                        <input type=\"hidden\" name=\"del\" value=\"" . $a['cid'] . "\">
                     <button class=\"button\" type=\"submit\">Delete</button>
                 </form></td>
                 </tr>";
@@ -167,7 +173,7 @@
             }
             ?>
 
-            </tbody> -->
+            </tbody>
             </table>
         </div>
     </center>

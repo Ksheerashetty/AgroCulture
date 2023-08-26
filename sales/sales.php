@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crops</title>
+    <title>Sales</title>
     <style>
         * {
             margin: 0;
@@ -62,19 +62,20 @@
             height: 2px;
             transition: all 0.5s linear;
         }
-
-        .active {
+        
+        .active{
             background:#736A20;
             opacity: .6;
             color: aliceblue;
             font-weight: bold;
         }
 
-        h1 {
+        h1{
             margin: 50px auto;
             margin-bottom: 20px;
-            color: aliceblue;
+            color:aliceblue;
             text-shadow: -8px -8px 15px rgb(147, 127, 45), 8px 8px 15px rgb(147, 127, 45);
+
         }
 
         .button{
@@ -87,9 +88,6 @@
             box-shadow:  -8px -8px 10px rgba(0, 0, 0, 0.2),8px 8px 15px rgba(0, 0, 0, 0.2);
             cursor: pointer;
         }
-
-        /* ---------------------------------------------------------------------------------- */
-
         .button:hover{
             background-color:#937F2D ;
             opacity: .6;
@@ -126,9 +124,9 @@
 <body>
     <!-- top navigation bar -->
     <ul>
-        <li><a href="../sales/sales.html">Sales</a></li>
-        <li><a class="active" href="#">Crops</a></li>
-        <li><a href="../equipment/equipment.html">Equipment</a></li>
+        <li><a class="active" href="#">Sales</a></li>
+        <li><a href="../crops/crop.php">Crops</a></li>
+        <li><a href="../equipment/equipment.php">Equipment</a></li>
         <li><a href="#">Logout</a></li>
     </ul>
 
@@ -136,19 +134,19 @@
     <!-- table -->
 
     <center>
-        <h1 style="font-weight: normal;text-transform: none;">Crops</h1>
-        <button class="button" onclick="window.location.href='add_crop.html'">Add Crops</button>
+        <h1 style="font-weight: normal;text-transform: none;">Sales</h1>
+        <button class="button" onclick="window.location.href='../sales/add_sales.html'">Add Sales</button>
         <div class="table-wrapper" tabindex="0">
             <table>
                 <thead>
                     <tr>
-                        <th>Crop ID</th>
+                        <th>Sales ID</th>
                         <th>Crop</th>
-                        <th>Farmer ID</th>
-                        <th>Total Crops</th>
+                        <th>Date</th>
+                        <th>Total Sales</th>
                     </tr>
                 </thead>
-                <!-- <tbody>
+                <tbody>
                 <?php
             include 'db.php';
             $q = "select * from product";
@@ -169,7 +167,7 @@
             }
             ?>
 
-            </tbody> -->
+            </tbody>
             </table>
         </div>
     </center>

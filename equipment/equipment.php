@@ -126,8 +126,8 @@
 <body>
     <!-- top navigation bar -->
     <ul>
-        <li><a href="../sales/sales.html">sales</a></li>
-        <li><a href="../crops/add_crop.php">Crops</a></li>
+        <li><a href="../sales/sales.php">sales</a></li>
+        <li><a href="../crops/crop.php">Crops</a></li>
         <li><a class="active" href="#">Equipment</a></li>
         <li><a href="#">Logout</a></li>
     </ul>

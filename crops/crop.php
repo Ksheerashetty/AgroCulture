@@ -62,7 +62,6 @@
             height: 2px;
             transition: all 0.5s linear;
         }
-
         .active {
             background:#736A20;
             opacity: .6;
@@ -76,7 +75,6 @@
             color: aliceblue;
             text-shadow: -8px -8px 15px rgb(147, 127, 45), 8px 8px 15px rgb(147, 127, 45);
         }
-
         .button{
             background: rgba(0, 0, 0, 0.3);
             padding: 12px 12px;
@@ -86,7 +84,6 @@
             margin-bottom: 20px;
             box-shadow:  -8px -8px 10px rgba(0, 0, 0, 0.2),8px 8px 15px rgba(0, 0, 0, 0.2);
             cursor: pointer;
-            
         }
 
         /* ---------------------------------------------------------------------------------- */

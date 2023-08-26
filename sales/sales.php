@@ -62,7 +62,6 @@
             height: 2px;
             transition: all 0.5s linear;
         }
-        
         .active{
             background:#736A20;
             opacity: .6;
@@ -75,9 +74,7 @@
             margin-bottom: 20px;
             color:aliceblue;
             text-shadow: -8px -8px 15px rgb(147, 127, 45), 8px 8px 15px rgb(147, 127, 45);
-
         }
-
         .button{
             background: rgba(0, 0, 0, 0.3);
             padding: 12px 12px;
@@ -92,6 +89,14 @@
             background-color:#937F2D ;
             opacity: .6;
         }
+    .center-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin:15px;
+     }
+
         .table-wrapper {
             overflow: auto;
             max-width: 100%;
@@ -110,16 +115,17 @@
             border-radius: 10px;
             background-color: rgba(0, 0, 0, 0.3);
             color: #ffffff;
-            white-space: nowrap;
+            padding : 20px;
+            /* white-space: nowrap; */
         }
 
-        th,
         td {
-            text-align: left;
+            text-align: center;
             padding: 0.5em 4em;
             border-radius: 10px;
             background-color: rgba(0, 0, 0, 0.3);
             color: #ffffff;
+            font-size:20px;
         }
     </style>
 </head>
@@ -147,6 +153,7 @@
                         <th>Crop</th>
                         <th>Date</th>
                         <th>Total Sales</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -162,13 +169,15 @@
                     <td>" . $a['cname'] . "</td>
                     <td>" . $a['day'] . "</td>
                     <td>" . $a['total'] . "</td>
-                    <td><form action=\"p_del.php\" method=\"post\">
+                    <td><form action=\"del_sale.php\" method=\"post\">
                         <input type=\"hidden\" name=\"del\" value=\"" . $a['sid'] . "\">
+                        <div class=\"center-button\">
                     <button class=\"button\" type=\"submit\">Delete</button>
                 </form></td>
                 </tr>";
                 }
             }
+            
             ?>
 
             </tbody>

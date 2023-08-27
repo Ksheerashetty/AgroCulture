@@ -147,7 +147,7 @@
 
     <center>
         <h1 style="font-weight: normal;text-transform: none;">Crops</h1>
-        <button class="button" onclick="window.location.href='add_crop.html'">Add Crops</button>
+        <button class="button" onclick="window.location.href='add_crop.php'">Add Crops</button>
         <div class="table-wrapper" tabindex="0">
             <table>
                 <thead> 

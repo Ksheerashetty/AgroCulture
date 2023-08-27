@@ -95,6 +95,16 @@
             <button>Add</button>
         </form>
     </div>
+    <center>
+  <?php 
+    session_start();
+    if(isset($_SESSION['message']) && !empty($_SESSION['message']))
+    {
+      echo "<h1>Crop Already Exist</h1>";
+      $_SESSION['message']="";
+    }
+    ?>
+    </center>
 </body>
 
 </html>

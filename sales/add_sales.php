@@ -83,28 +83,57 @@
     button:hover {
       background-color: #554914;
     }
+    select {
+    background-color: #DAE4F0;
+    border: none;
+    border-radius: 10px;
+    line-height: 24px;
+    padding: 10px 20px;
+    display: block;
+    margin: 10px auto;
+    font-size: 20px;
+    width: 80%;
+    cursor: pointer; /* Add cursor style */
+  }
+
+  /* Style for the dropdown options */
+  select option {
+    background-color: rgba(218, 228, 240, 0.8); /* Add alpha (opacity) value */
+    color: #333; 
+    font-size: 18px;
+  }
+  select option:checked {
+    background-color: #736A20;
+    color: #DAE4F0;
+  }
   </style>
 </head>
-
 <body>
-
   <div>
     <form action="add_salesScript.php" method="post" class="form">
       <h1>Add Sales</h1>
-      <select name="crop">
-        <?php
-        include '../db.php';
-        $q = "select * from crop";
-        $result = mysqli_query($con, $q);
-        if (mysqli_query($con, $q)) {
-            while ($a = mysqli_fetch_assoc($result)) {
-                echo "<option value=\"".$a['cname']."\">".$a['cname']."</option>
-                <input type=\"hidden\" name=\"cid\" value=\"" . $a['cid'] . "\">";}
-            }
+      <select name="crop" id="cropSelect">
+  <?php
+  include '../db.php';
+  $q = "SELECT * FROM crop";
+  $result = mysqli_query($con, $q);
+  if ($result) {
+    while ($a = mysqli_fetch_assoc($result)) {
+      echo '<option value="' . $a['cname'] . '" data-cid="' . $a['cid'] . '">' . $a['cname'] . '</option>';
+    }
+  }
   ?>
 </select>
+<input type="hidden" name="cid" id="selectedCid">
       <input type="date" placeholder="Date" name="date" required>
       <input type="text" placeholder="Total Sales" name="total" required>
+      <script>
+  document.getElementById('cropSelect').addEventListener('change', function() {
+    var selectedOption = this.options[this.selectedIndex];
+    var selectedCid = selectedOption.getAttribute('data-cid');
+    document.getElementById('selectedCid').value = selectedCid;
+  });
+</script>
       <button>Add</button>
     </form>
   </div>

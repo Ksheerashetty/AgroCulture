@@ -26,7 +26,7 @@ if(mysqli_query($con,$q))
 else
 {
     $_SESSION['message']="error";
-    header("Location:../crops.crop.php");
+    header("Location:../crops/add_crop.php");
     exit();
 }
 

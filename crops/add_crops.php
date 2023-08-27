@@ -14,8 +14,8 @@ else
 {
     $n=0;
 }
-if(n==0)
-{}
+if($n==0)
+{
 $q="insert into crop (fid, cname, quantity)values('$id','$crop','$quantity')";
 if(mysqli_query($con,$q))
 {

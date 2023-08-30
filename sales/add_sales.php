@@ -112,7 +112,7 @@
   <div>
     <form action="add_salesScript.php" method="post" class="form">
       <h1>Add Sales</h1>
-      <select name="crop" id="cropSelect">
+      <select name="crop" id="cropSelect" required>
   <?php
   include '../db.php';
   $q = "SELECT * FROM crop";
@@ -125,7 +125,6 @@
   ?>
 </select>
 <input type="hidden" name="cid" id="selectedCid">
-      <input type="text" placeholder="Sale" name="sale" required>
       <input type="date" placeholder="Date" name="date" required>
       <input type="text" placeholder="Total Sales" name="total" required>
       <script>

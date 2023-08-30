@@ -125,7 +125,7 @@
   ?>
 </select>
 <input type="hidden" name="cid" id="selectedCid"> -->
-      <input type="text" placeholder="Sale" name="sale" required>
+      <input type="text" placeholder="Crop" name="sale" required>
       <input type="date" placeholder="Date" name="date" required>
       <input type="text" placeholder="Total Sales" name="total" required>
       <!-- <script>

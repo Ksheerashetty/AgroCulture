@@ -113,11 +113,28 @@
     <form action="add_salesScript.php" method="post" class="form">
       <h1>Add Sales</h1>
       <!-- <select name="crop" id="cropSelect">
+  <?php
+  include '../db.php';
+  $q = "SELECT * FROM crop";
+  $result = mysqli_query($con, $q);
+  if ($result) {
+    while ($a = mysqli_fetch_assoc($result)) {
+      echo '<option value="' . $a['cname'] . '" data-cid="' . $a['cid'] . '">' . $a['cname'] . '</option>';
+    }
+  }
+  ?>
 </select>
 <input type="hidden" name="cid" id="selectedCid"> -->
       <input type="text" placeholder="Crop" name="crop" required>
       <input type="date" placeholder="Date" name="date" required>
       <input type="text" placeholder="Total Sales" name="total" required>
+      <!-- <script>
+  document.getElementById('cropSelect').addEventListener('change', function() {
+    var selectedOption = this.options[this.selectedIndex];
+    var selectedCid = selectedOption.getAttribute('data-cid');
+    document.getElementById('selectedCid').value = selectedCid;
+  });
+</script> -->
       <button>Add</button>
     </form>
   </div>

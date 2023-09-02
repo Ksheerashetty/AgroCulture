@@ -1,3 +1,7 @@
+<?php
+session_start();
+$id=$_SESSION['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -164,10 +168,8 @@
                 </thead>
                 <tbody>
               <?php
-              session_start();
             include '../db.php';
-            $fid=$_SESSION['id'];
-            $q = "select * from equipment where fid='$fid'";
+            $q = "select * from equipment where fid='$id'";
             $result = mysqli_query($con, $q);
             if (mysqli_query($con, $q)) {
                 while ($a = mysqli_fetch_assoc($result)) {

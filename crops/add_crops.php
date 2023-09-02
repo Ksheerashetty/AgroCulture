@@ -6,7 +6,7 @@ $crop=$_POST['crops'];
 $quantity=$_POST['quantity'];
 $id=$_SESSION['id'];
 
-$q1="select * from crop where cname='$crop'";
+$q1="select * from crop where cname='$crop' AND fid='$id'";
 if($r=mysqli_query($con,$q1)){
     $n=mysqli_num_rows($r);
 }

@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+session_start();
+$id=$_SESSION['id'];
+?>
 <html lang="en">
 
 <head>
@@ -158,10 +161,8 @@
                 </thead>
                 <tbody>
                 <?php
-                session_start();
             include '../db.php';
-            $fid=$_SESSION['id'];
-            $q = "select * from sales where fid='$fid'";
+            $q = "select * from sales where fid='$id'";
             $result = mysqli_query($con, $q);
             if (mysqli_query($con, $q)) {
                 while ($a = mysqli_fetch_assoc($result)) {

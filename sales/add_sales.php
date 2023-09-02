@@ -1,3 +1,7 @@
+<?php
+session_start();
+$id=$_SESSION['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -115,7 +119,7 @@
       <select name="crop" id="cropSelect" required>
   <?php
   include '../db.php';
-  $q = "SELECT * FROM crop";
+  $q = "SELECT * FROM crop where fid='$id'";
   $result = mysqli_query($con, $q);
   if ($result) {
     while ($a = mysqli_fetch_assoc($result)) {

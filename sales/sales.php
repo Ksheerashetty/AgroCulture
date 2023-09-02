@@ -158,8 +158,10 @@
                 </thead>
                 <tbody>
                 <?php
+                session_start();
             include '../db.php';
-            $q = "select * from sales";
+            $fid=$_SESSION['id'];
+            $q = "select * from sales where fid='$fid'";
             $result = mysqli_query($con, $q);
             if (mysqli_query($con, $q)) {
                 while ($a = mysqli_fetch_assoc($result)) {
